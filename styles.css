@@ -1,0 +1,34 @@
+.container {
+    
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+
+}
+
+.grid {
+    display: flex;
+    
+    
+    border: black solid 1px;
+}
+
+.row{
+    border: 1px black solid;
+    height: 50px;
+    width: 50px;
+    margin: 1px;
+    background: gold;
+    text-align: center;
+}
+
+.column{
+    flex:1;
+}
+.new {
+    background-color: aqua;
+}

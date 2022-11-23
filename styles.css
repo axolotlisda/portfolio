@@ -1,34 +1,109 @@
 .container {
     
     display: flex;
-    width: fit-content;
-    height: fit-content;
+    width: 750px;
+    height: 750px;
     margin: auto;
     align-items: center;
     justify-content: center;
-    border: 2px solid black;
+    border: 1px solid black;
+    background-color: crimson;
+    border-radius: 20px;
 
 }
-
 .grid {
     display: flex;
-    
-    
+    width: 730px;
+    height: 730px;
+    /*background-color: purple;*/
     border: black solid 1px;
 }
 
 .row{
-    border: 1px black solid;
-    height: 50px;
-    width: 50px;
-    margin: 1px;
-    background: gold;
-    text-align: center;
+
+    /*border: 1px black solid;*/
+    display: flex;
+    flex: 1;
+    background:whitesmoke;
+    
 }
 
 .column{
-    flex:1;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    
+    
 }
-.new {
-    background-color: aqua;
+
+.promptbutton{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: whitesmoke;
+    padding: 8px;
+    
 }
+.btndiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border: 2px black;
+    border-style: double;
+    
+    padding:16px;
+    padding-left: 35px;
+    padding-right: 35px;
+    
+}
+
+.restart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.startdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.start {
+   
+    
+   
+    border: 3px solid;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 16px;
+}
+
+body {
+    background-image: url("wall.jpg");
+    
+    margin: 0px;
+
+
+}
+

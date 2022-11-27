@@ -1,7 +1,7 @@
 let rainbow = false; // rainbow button boolean
 let black = true; // black color button boolean
-let grayscale = false;
-
+let grayscale = false; //grayscale button boolean
+beggining();
 //grayscale
 const gray = ["rgb(235,235,235)"
   ,"rgb(209,209,209)"
@@ -13,23 +13,6 @@ const gray = ["rgb(235,235,235)"
   ,"rgb(52,52,52)"
   ,"rgb(26,26,26)"
   ,"rgb(0,0,0)"];
-
-
-
-const startdiv = document.createElement('div');
-const start = document.createElement('button');
-startdiv.classList.add('startdiv');
-start.addEventListener('click', () => {
-beggining();
-start.remove();
-});
-start.classList.add('start');
-start.textContent = "START BUTTON";
-
-startdiv.appendChild(start);
-document.body.appendChild(startdiv);
-
-
 function beggining(){
 
 const btns = document.querySelector('.btns'); // div for my 'btn' button

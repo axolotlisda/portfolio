@@ -34,8 +34,6 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    
-    
 }
 
 .promptbutton{
@@ -44,8 +42,7 @@
     border-radius: 20px;
     font-size: 20px;
     background-color: whitesmoke;
-    padding: 8px;
-    
+    padding: 8px; 
 }
 
 
@@ -80,30 +77,10 @@
     justify-content: center;
     gap: 16px;
 
-}
-.startdiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.start {
-   
-    
-   
-    border: 3px solid;
-    padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 16px;
-}
-
+}   
 body {
     background-image: url("wall.jpg");
-    
     margin: 0px;
-
-
 }
 
 

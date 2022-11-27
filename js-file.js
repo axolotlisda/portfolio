@@ -1,3 +1,20 @@
+let rainbow = false; // rainbow button boolean
+let black = true; // black color button boolean
+let grayscale = false;
+
+//grayscale
+const gray = ["rgb(235,235,235)"
+  ,"rgb(209,209,209)"
+  ,"rgb(183,183,183)"
+  ,"rgb(157,157,157)"
+  ,"rgb(131,131,131)"
+  ,"rgb(104,104,104)"
+  ,"rgb(78,78,78)"
+  ,"rgb(52,52,52)"
+  ,"rgb(26,26,26)"
+  ,"rgb(0,0,0)"];
+
+
 
 const startdiv = document.createElement('div');
 const start = document.createElement('button');
@@ -25,9 +42,6 @@ const btnz = document.createElement("button");
 
 
 btn.addEventListener("click", () => {
-
-/*  let errorText = document.createElement('p');
-  errorText.classList.add("errorText");*/
 
        let roww = prompt("how many rows and columns? \n NOTE: 6 to 99 ONLY",0);
         let rows = parseInt(roww);
@@ -57,20 +71,6 @@ btn.addEventListener("click", () => {
         else if(!isNaN(roww)){
           btn.remove();
 
-    /*const btn = document.createElement("button"); // create button
-          btn.addEventListener("click", (e) => {
-            
-        e = prompt("how many boxes", 0);
-        if(isNaN(e)){
-            console.log("you need to enter a number, human.");
-        }
-        else if(!isNaN(e)){
-        rows = parseInt(e);
-        columns = parseInt(e);
-        console.log(columns+rows);
-        }
-      });*/
-
     let container = document.createElement('div'); //container for the divs
     container.className = 'container'; //css style of the container
     
@@ -95,75 +95,106 @@ btn.addEventListener("click", () => {
     const restart = document.createElement("div"); // create div for the button
     restart.classList.add('restart');
     const restartbtn = document.createElement('button');
-    restartbtn.classList.add('btndiv'); //css style of the div 
+    
     restartbtn.textContent = "restart";
     restartbtn.classList.add('promptbutton'); // css style of the button
 
+    //create rainbow and black color button
+    const blackbtn = document.createElement('button');
+    const rainbowbtn = document.createElement('button');
 
-    document.body.appendChild(container);
+    blackbtn.textContent = "black color";
+    rainbowbtn.textContent = "rainbow color";
+    blackbtn.classList.add('promptbutton');
+    rainbowbtn.classList.add('promptbutton');
+
+    //create grayscale button
+    const grayscalebtn = document.createElement('button');
+    grayscalebtn.textContent = "10 shades of gray";
+    grayscalebtn.classList.add("promptbutton");
+
+    //append the color changing buttons
+    document.body.appendChild(container); 
+    restart.appendChild(blackbtn);
+    restart.appendChild(rainbowbtn);
+    restart.appendChild(grayscalebtn);
     restart.appendChild(restartbtn);
+
     document.body.appendChild(restart);
+
+    //blackbtn switch 
+    blackbtn.addEventListener("click", () => {
+        black = true;
+        rainbow = false;
+        grayscale = false;
+        console.log("rainbow: "+rainbow);
+        console.log("black: "+black);
+        console.log("gray: "+grayscale);
+      
+    });
+
+    //blackbtn switch to true or false using button
+    rainbowbtn.addEventListener("click", () => {
+      rainbow = true;
+      black = false;
+      grayscale = false;
+      console.log("rainbow: "+rainbow);
+      console.log("black: "+black);
+      console.log("gray: "+grayscale);
+    
+  });
+  //grayscale button switch  
+    grayscalebtn.addEventListener("click", () => {
+      rainbow = false;
+      black = false;
+      grayscale = true;
+      console.log("rainbow: "+rainbow);
+      console.log("black: "+black);
+      console.log("gray: "+grayscale);
+    });
+
 
     restartbtn.addEventListener('click', () => {
       let rem = document.querySelector(".container");
-      let rem2 = document.querySelector("button.btndiv.promptbutton");
+      let rem3 = document.querySelector(".restart");
+      //let rem2 = document.querySelector("button.promptbutton");
       rem.remove();
-      rem2.remove();
+      rem3.remove();
+      //rem2.remove();
       beggining();
       
     });
-    
 
 
-
-
-    //mouseover event to change background color
-
-    
+    //mouseover event to change background color    
     const divs = document.querySelectorAll("div.row");
     
-    
-
-
-
-
-    
        divs.forEach((box) => {
-        
-        box.addEventListener("mouseover", () => {
+
+        let i = 0; //very important in grayscale 
+
+  box.addEventListener("mouseover", () => {
+          if(rainbow === true){
+            i = 0; //back to gray [0]
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+          box.style.backgroundColor = "#"+randomColor;
+          }
+          
+          if(black === true){
+            i = 0; // back to gray [0]
             box.style.backgroundColor = "black";
-          // box.classList.add('hover');
-        });
-        box.addEventListener("click", () => {
-          box.style.backgroundColor = "gold";
-          //box.classList.add('leftclick');
-        });
-      });
-    }
+            }
+          });//box.mouseover
 
-
-
-
-  
-
-
-     /* const btndiv = document.createElement("div"); // create div for the button
-      
-      
-      btndiv.classList.add('btndiv'); //css style of the div 
-      btn.textContent = "Change resolution";
-      btn.classList.add('promptbutton'); // css style of the button
-
-
-      btndiv.appendChild(btn);
-      document.body.appendChild(btndiv);
-      
-
-      */
-     
-
-
-
-    });
-
-  }
+          //grayscale mouseoverevent
+          box.addEventListener("mouseover", () => {
+            if(grayscale === true){
+                box.style.backgroundColor = gray[i];
+                i++;
+                console.log(i);
+                }
+          });
+      }); //foreach
+    } //else
+    });// click event line 46
+  } // beginning
